@@ -1,0 +1,20 @@
+class Solution {
+    public int reverse(int x) {
+        boolean negative = x < 0;
+
+        String s = Long.toString(Math.abs((long)x));
+        String rev = new StringBuilder(s).reverse().toString();
+
+        long ans = Long.parseLong(rev);
+
+        if (negative) {
+            ans = -ans;
+        }
+
+        if (ans > Integer.MAX_VALUE || ans < Integer.MIN_VALUE) {
+            return 0;
+        }
+
+        return (int) ans;
+    }
+}
